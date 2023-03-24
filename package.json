@@ -41,7 +41,7 @@
         "scope": "source.typst",
         "injection-regex": "typst",
         "file-types": [
-            "typ"
+            "typ", "typst"
         ]
     }]
 }

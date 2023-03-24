@@ -147,6 +147,10 @@ module.exports = grammar({
             '/',
             '~',
             '-',
+            '+',
+            '(',
+            ')',
+            "'",
             '.',
             ':',
             '*',
@@ -161,6 +165,7 @@ module.exports = grammar({
             ';',
             '?',
             '!',
+            '%',
         )),
 
         _code_mode: $ => choice(
@@ -347,7 +352,7 @@ module.exports = grammar({
         )),
 
         parameters: $ => seq(
-            '(',
+            token.immediate('('),
             optional($._parameters),
             ')'
         ),
@@ -481,7 +486,6 @@ module.exports = grammar({
         function_call: $ => prec.right(PREC.call, seq(
             // #type
             field('function', $.identifier),
-
             // #type[]
             optional(choice(
                 // #type(name())

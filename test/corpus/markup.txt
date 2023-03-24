@@ -35,3 +35,13 @@ hello this is normal text! #hello is a variable!
   (string_literal))
  (function_call
   (identifier)))
+
+================================================================================
+Markup kinds
+================================================================================
+
++ Hello there! (this shouldn't do weird stuff)
+
+--------------------------------------------------------------------------------
+
+(source_file)
